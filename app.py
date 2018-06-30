@@ -8,7 +8,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     todos = []
+
     return render_template('index.html', todos=todos)
+
+
+@app.route('/register')
+def register():
+    todos = []
+
+    return render_template('index.html', todo=todos)
 
 
 if __name__ == '__main__':
