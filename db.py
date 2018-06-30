@@ -6,7 +6,7 @@ from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy import DateTime
 
-engine = create_engine('sqlite:///db.sqlite3', echo=True)
+engine = create_engine('sqlite:///db.sqlite3', echo=False)
 
 metadata = MetaData()
 metadata.bind = engine
@@ -14,7 +14,7 @@ metadata.bind = engine
 # todoテーブルの定義
 todo = Table(
     'todo', metadata,
-    Column('id', Integer, primary_key=False),
+    Column('id', Integer, primary_key=True),
     Column('contents', String),
     Column('created_at', DateTime)
 )

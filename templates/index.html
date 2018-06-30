@@ -6,7 +6,10 @@
 </head>
 <body>
     <div>
-        <a href="/register">新しいTODO</a>
+        <form method="POST" action="/register">
+            <input type="text" name="contents"/>
+            <input type="submit" value="新しいTODO"/>
+        </form>
     </div>
     <div>
         <ul>
