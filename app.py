@@ -1,7 +1,9 @@
 # server.py
 from flask import Flask
 from flask import render_template
+from datetime import datetime
 
+import db
 app = Flask(__name__)
 
 
@@ -14,9 +16,11 @@ def index():
 
 @app.route('/register')
 def register():
-    todos = []
+    db.todo.insert().execute(contents='test', created_at=datetime.now())
 
-    return render_template('index.html', todo=todos)
+    todos = db.todo.select().execute().fetchall()
+    print(todos)
+    return render_template('index.html', todos=todos)
 
 
 if __name__ == '__main__':

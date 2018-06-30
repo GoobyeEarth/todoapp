@@ -8,5 +8,12 @@
     <div>
         <a href="/register">新しいTODO</a>
     </div>
+    <div>
+        <ul>
+            {% for todo in todos %}
+            <li>{{todo.contents}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
